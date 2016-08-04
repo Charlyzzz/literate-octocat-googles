@@ -19,12 +19,12 @@ class Nespresso
   end
 
   def pour_milk
-    raise 'No milk left' if @milk_level == 0
+    raise 'No milk left' if @milk_level.zero?
     @milk_level -= 1
   end
 
   def pour_coffee
-    raise 'No capsules left' if @capsules_left == 0
+    raise 'No capsules left' if @capsules_left.zero?
     @capsules_left -= 1
   end
 

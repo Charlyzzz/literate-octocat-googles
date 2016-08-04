@@ -1,7 +1,7 @@
 require 'rspec'
 require_relative '../src/decorator/greeter'
 
-context 'Decorators' do
+context 'Decorator' do
 
   def combine_greeters(*greeters)
     greeters.reverse.inject(original_greeter) do |decorated, new_type|
@@ -23,13 +23,13 @@ context 'Decorators' do
     context 'on a decorated greeter' do
 
       it 'should modify the greet if there is SuperPoliteGreeters in the chain' do
-        unkwnow_greeter = SuperPoliteGreeter.new(original_greeter)
-        expect(unkwnow_greeter.greet).to eq('Hi!, how are you?')
+        unknown_greeter = SuperPoliteGreeter.new(original_greeter)
+        expect(unknown_greeter.greet).to eq('Hi!, how are you?')
       end
 
       it "should concat 'how are you?' for each SuperPoliteGreeter" do
-        unkwnow_greeter = combine_greeters(SuperPoliteGreeter, Guard, SuperPoliteGreeter)
-        expect(unkwnow_greeter.greet).to eq('Hi!, how are you?, how are you?')
+        unknown_greeter = combine_greeters(SuperPoliteGreeter, Guard, SuperPoliteGreeter)
+        expect(unknown_greeter.greet).to eq('Hi!, how are you?, how are you?')
       end
 
     end
@@ -48,18 +48,18 @@ context 'Decorators' do
     context 'on a decorated greeter' do
 
       it 'should be hungry if are no a Guards' do
-        unkwnow_greeter = combine_greeters(SuperPoliteGreeter, SuperPoliteGreeter)
-        expect(unkwnow_greeter.are_you_hungry?).to be true
+        unknown_greeter = combine_greeters(SuperPoliteGreeter, SuperPoliteGreeter)
+        expect(unknown_greeter.are_you_hungry?).to be true
       end
 
       it 'should not be hungry if there is a Guard' do
-        unkwnow_greeter = Guard.new(original_greeter)
-        expect(unkwnow_greeter.are_you_hungry?).to be false
+        unknown_greeter = Guard.new(original_greeter)
+        expect(unknown_greeter.are_you_hungry?).to be false
       end
 
       it 'should not be hungry if there are any Guard' do
-        unkwnow_greeter = combine_greeters(SuperPoliteGreeter, Guard, SuperPoliteGreeter)
-        expect(unkwnow_greeter.are_you_hungry?).to be false
+        unknown_greeter = combine_greeters(SuperPoliteGreeter, Guard, SuperPoliteGreeter)
+        expect(unknown_greeter.are_you_hungry?).to be false
       end
 
     end
