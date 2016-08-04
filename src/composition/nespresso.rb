@@ -16,7 +16,6 @@ class Nespresso
     @features.each do |feature|
       feature.modify(self)
     end
-
   end
 
   def pour_milk
