@@ -1,5 +1,5 @@
 # literate-octocat-googles
-A _rubyesque_ take on design patterns.
+## A _rubyesque_ take on design patterns.
 
 
 Disclaimer: 
