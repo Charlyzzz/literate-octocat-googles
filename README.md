@@ -1,2 +1,2 @@
 # literate-octocat-googles
-A 'rubyesque' take on patterns
+A _rubyesque_ take on patterns
