@@ -30,7 +30,6 @@ class Nespresso
 
 end
 
-
 class MilkModule
 
   def modify(machine)
